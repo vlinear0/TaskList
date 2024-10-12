@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Список задач: Нова задача</title>
+</head>
+<body>
+  <h1>Создание новой задачи</h1>
+  <form action="/tasks" method="post">
+    <label for="task_name">Название задачи:</label>
+    <input type="text" id="task_name" name="task_name" placeholder="Введите название задачи" required/><br/>
+
+    <label for="task_description">Описание задачи:</label>
+    <input type="text" id="task_description" name="task_description" placeholder="Введите описание задачи" required/><br/>
+
+    <label for="task_full_text">Полный текст задачи:</label>
+    <textarea id="task_full_text" name="task_full_text" placeholder="Введите полный текст задачи"></textarea><br/>
+
+    <label for="task_is_important">Важно:</label>
+    <input type="checkbox" id="task_is_important" name="task_is_important"/><br/>
+
+    <label for="task_status">Статус завершенности:</label>
+    <input type="checkbox" id="task_status" name="task_status"/><br/>
+
+    <button type="submit">Создать задачу</button>
+  </form>
+</body>
+</html>

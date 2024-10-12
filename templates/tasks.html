@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Список завдань</title>
+</head>
+<body>
+  <ul>
+    {% for task in tasks %}
+    <li>
+      <div>
+        <h3>
+          Id - {{ task[0] }}
+        </h3>
+        <h2>
+          Name - {{ task[1] }}
+        </h2>
+      </div>
+    </li>
+    {% else %}
+    <li>Поки що у вас немає завдань</li>
+    {% endfor %}
+    <form action="/" method="get">
+      <button type="submit">Return back</button>
+    </form>
+  </ul>
+</body>
+</html>
