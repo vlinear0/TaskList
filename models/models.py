@@ -4,7 +4,6 @@ from typing import List
 
 @dataclass
 class Task:
-  id: int
   name: str
   description: str
   full_text: str = ""
