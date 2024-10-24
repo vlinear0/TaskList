@@ -8,21 +8,23 @@
 <body>
   <h1>Список завдань</h1>
   <ul>
-    {% for task in tasks %}
-    <li>
-      <div>
-        <h3>Id - {{ task.id }}</h3>
-        <h2>Name - {{ task.name }}</h2>
-        <p>Description - {{ task.description }}</p>
-        <form action="/delete_task/{{ task.id }}" method="POST">
-          {{ form.csrf_token }}
-          <button type="submit">Delete</button>
-        </form>
-      </div>
-    </li>
+    {% if tasks %}
+      {% for task in tasks %}
+      <li>
+        <div>
+          <h3>Id - {{ task[0] }}</h3>
+          <h2>Name - {{ task[1] }}</h2>
+          <p>Description - {{ task[2] }}</p>
+          <form action="/delete_task/{{ task[0] }}" method="POST">
+            {{ form.csrf_token }}
+            <button type="submit">Delete</button>
+          </form>
+        </div>
+      </li>
+      {% endfor %}
     {% else %}
-    <li>Поки що у вас немає завдань</li>
-    {% endfor %}
+      <li>Поки що у вас немає завдань</li>
+    {% endif %}
   </ul>
 
   <form action="/create_task" method="get">
